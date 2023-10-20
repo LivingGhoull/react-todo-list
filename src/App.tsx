@@ -2,8 +2,13 @@ import { v4 as uuidv4 } from 'uuid';
 import { useState } from "react";
 import TodoForm from "./components/TodoForm";
 
+type TodoItem = {
+  id: string;
+  todo: string;
+};
+
 function App() {
-  const [todoList, setTodoList] = useState([{}]);
+  const [todoList, setTodoList] = useState<TodoItem[]>([]);
 
   const addTodo = (todo: string) => {
     setTodoList([...todoList, { id: uuidv4(), todo: todo }]);
@@ -13,10 +18,10 @@ function App() {
     <div>
       <h1>To do list</h1>
       <TodoForm addTodo={addTodo} />
-      {todoList.map((todo) => 
+      {todoList.map((todo: TodoItem) => 
       
-      <p>todo</p>
-      
+      <p key={todo.id}>{todo.todo}</p>
+            
       )}
     </div>
   );
