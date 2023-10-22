@@ -1,0 +1,17 @@
+#add-task-form {
+  margin: 2rem 0;
+}
+
+#todo-text {
+  padding: 0.8rem 0.5rem;
+  margin-right: 1rem;
+
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#todo-btn {
+  padding: 0.8rem;
+  border: 1px solid black;
+  border-radius: 10px;
+} 

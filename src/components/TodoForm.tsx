@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../components/TodoForm.css";
 
 interface Props {
   addTodo: (todo: string) => void;
@@ -17,15 +18,16 @@ function TodoForm({ addTodo }: Props) {
 
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
+      <form id="add-task-form" action="" onSubmit={handleSubmit}>
         <input
+          id="todo-text"
           type="text"
           value={todo}
           onChange={(e) => {
             setTodo(e.target.value);
           }}
         />
-        <button>Submit</button>
+        <button id="todo-btn">Submit</button>
       </form>
     </div>
   );
